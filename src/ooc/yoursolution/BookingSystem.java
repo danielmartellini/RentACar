@@ -13,10 +13,24 @@ import java.io.IOException;
  * @author danie
  */
 public class BookingSystem implements BookingSystemInterface {
-
+ 
     @Override
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String rental = in.readLine();
+        String content= "";
+        
+        RentACarInterface rentACar = new RentACar();
+        
+        while(rental != null){
+            System.out.println(rental);
+            content = in.readLine();
+            System.out.println(content);
+//                
+//            Car cars = new Car(content);
+//            .addItem(cars);
+//            
+//            title = in.readLine();}
+//        
     }
     
 }
