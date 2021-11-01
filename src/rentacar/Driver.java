@@ -37,12 +37,12 @@ public class Driver {
      */
     public static void main(String[] args) throws IOException {
 
-        BookingSystemInterface bookingSystem = new BookingSystem();
+        //BookingSystemInterface bookingSystem = new BookingSystem();
 
         String file = "amilcar_rentals.txt";
         BufferedReader in = new BufferedReader(new FileReader(file));
-
-        RentACarInterface rentACar = bookingSystem.setupRentACar(in);
+        System.out.println(in);
+        //RentACarInterface rentACar = bookingSystem.setupRentACar(in);
 
         // Get the name of the car rental
        // System.out.println(rentACar.getName());
