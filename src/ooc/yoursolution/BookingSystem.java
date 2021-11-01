@@ -19,18 +19,28 @@ public class BookingSystem implements BookingSystemInterface {
         String rental = in.readLine();
         String content= "";
         
-        RentACarInterface rentACar = new RentACar();
+       RentACarInterface rentACar = new RentACar();
         
         while(rental != null){
             System.out.println(rental);
-            content = in.readLine();
-            System.out.println(content);
+           // content = in.readLine();
+            //System.out.println(content);
+            rental = in.readLine();}
 //                
 //            Car cars = new Car(content);
 //            .addItem(cars);
 //            
-//            title = in.readLine();}
+//            
 //        
-    }
     
+  return rentACar;
+}
+    
+    @Override
+    public String toString() {
+        return "BookingSystem{" + '}';
+    }
+
+    
+
 }

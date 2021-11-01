@@ -17,18 +17,19 @@ public class Car implements CarInterface{
     
     public Make make;
     public double rate;
-    public int amount;
+    public int id;
     
     public Car(Make make,double rate, int id){
         this.make=make;
         this.rate=rate;
-        this.amount=id;
+        this.id=id;
        
     }
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  
     }
 
     @Override
@@ -63,7 +64,7 @@ public class Car implements CarInterface{
 
     @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return id;
     }
 
     @Override
