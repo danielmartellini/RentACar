@@ -5,6 +5,7 @@
  */
 package ooc.yoursolution;
 
+import java.util.ArrayList;
 import java.util.List;
 import ooc.enums.Make;
 import ooc.enums.Month;
@@ -14,20 +15,33 @@ import ooc.enums.Month;
  * @author danie
  */
 public class RentACar implements RentACarInterface{
-
-    @Override
-    public List<CarInterface> getCars() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    List<CarInterface> cars;
+    String text;
+    
+    public RentACar(){}
+    
+    public RentACar (String text){
+        this.text=text;
+        this.cars = new ArrayList<CarInterface>();
     }
 
     @Override
+    public List<CarInterface> getCars() {
+        
+        return cars;
+    }
+
+    
+
+    @Override
     public void setCars(List<CarInterface> cars) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       this.cars.addAll(cars);
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.text;
     }
 
     @Override
@@ -52,7 +66,7 @@ public class RentACar implements RentACarInterface{
 
     @Override
     public int getNumberOfCars() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cars.size();
     }
     
 }

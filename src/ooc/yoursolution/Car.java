@@ -15,11 +15,11 @@ import ooc.enums.Month;
  */
 public class Car implements CarInterface{
     
-    public String make;
+    public Make make;
     public double rate;
     public int id;
     
-    public Car(String make,double rate, int id){
+    public Car(Make make,double rate, int id){
         this.make=make;
         this.rate=rate;
         this.id=id;

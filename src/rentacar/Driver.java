@@ -43,13 +43,14 @@ public class Driver {
         BufferedReader in = new BufferedReader(new FileReader(file));
         
         RentACarInterface rentACar = bookingSystem.setupRentACar(in);
-       // System.out.println(rentACar);
+        System.out.println(rentACar.getCars());
+       
 
         // Get the name of the car rental
-       //System.out.println(rentACar.getName());
+       System.out.println(rentACar.getName());
         
 //        // Print the number of cars in the rent-a-car
-//        System.out.println(rentACar.getNumberOfCars());  
+        System.out.println(rentACar.getNumberOfCars());  
 //        
 //        // Check if there is a BMW car available for 5 days from the 1st
 //        // of January
