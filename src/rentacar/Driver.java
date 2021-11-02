@@ -48,10 +48,11 @@ public class Driver {
 
         // Get the name of the car rental
        System.out.println(rentACar.getName());
+      
         
 //        // Print the number of cars in the rent-a-car
-        System.out.println(rentACar.getNumberOfCars());  
-//        
+        System.out.println(rentACar.getNumberOfCars()); 
+        
 //        // Check if there is a BMW car available for 5 days from the 1st
 //        // of January
 //        System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5)); 

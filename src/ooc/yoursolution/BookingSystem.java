@@ -21,6 +21,9 @@ public class BookingSystem implements BookingSystemInterface {
         String content = in.readLine();
         String rental= content;
         String [] data = null;
+        int counter=0;
+        //used to id the cars from 1 to the number of cars available
+        int identifier=1;
         //read the line again so the fact that the name didn't have a : wont make the code crash
         content = in.readLine();
         
@@ -32,18 +35,23 @@ public class BookingSystem implements BookingSystemInterface {
             //System.out.println(data[0]);
             //System.out.println(data[1]);
             //System.out.println(data[2]);
-            Car car= new Car(Make.valueOf(data[0]),Double.parseDouble(data[1]),Integer.parseInt(data[2]));
-            System.out.println(car);
+            while(counter<Integer.parseInt(data[2])){
+            Car car= new Car(Make.valueOf(data[0]),Double.parseDouble(data[1]), identifier);
+            counter++;
+            identifier++;
+            //System.out.println(car);
             cars.add(car);
             
+            }
+            counter=0;
+            
+           
             
             
-            //System.out.println(content);
-           // content = in.readLine();
-            //System.out.println(content);
+            //used to go to the next line
             content = in.readLine();}
 //                
-            System.out.println(cars);
+            //System.out.println(cars);
             rentACar.setCars(cars);
             
             

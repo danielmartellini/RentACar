@@ -17,12 +17,12 @@ import ooc.enums.Month;
 public class RentACar implements RentACarInterface{
     
     List<CarInterface> cars;
-    String text;
+    String name;
     
     public RentACar(){}
     
-    public RentACar (String text){
-        this.text=text;
+    public RentACar (String name){
+        this.name=name;
         this.cars = new ArrayList<CarInterface>();
     }
 
@@ -41,12 +41,12 @@ public class RentACar implements RentACarInterface{
 
     @Override
     public String getName() {
-        return this.text;
+        return this.name;
     }
 
     @Override
     public void setName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.name=name;
     }
 
     @Override

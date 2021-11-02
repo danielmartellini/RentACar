@@ -5,6 +5,7 @@
  */
 package ooc.yoursolution;
 
+import java.util.HashMap;
 import java.util.Map;
 import ooc.enums.Make;
 import ooc.enums.Month;
@@ -18,28 +19,53 @@ public class Car implements CarInterface{
     public Make make;
     public double rate;
     public int id;
+    public Map myMap;
     
+   
     public Car(Make make,double rate, int id){
         this.make=make;
         this.rate=rate;
         this.id=id;
+        this.myMap= new HashMap<>();
+        createAvailability();
+        
        
     }
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
-              throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  
+        
+       //dayStatus true=available false=booked
+       int nDays = 0;
+       Month[] months = Month.values();
+       
+       for(Month month: months){
+            // System.out.println(m);
+             nDays= month.getNumberOfDays();
+             //System.out.println(nDays);
+             boolean [] dayStatus= new boolean[nDays];
+             
+             for(int i=0; i<nDays; i++){
+                 System.out.println(month.toString());
+                 dayStatus[i]= true;
+                //System.out.println(dayStatus[i].toString());
+                 myMap.put(month, dayStatus);
+                 
+                     }  
+       }
+        System.out.println(myMap);
+              
+  return myMap;
     }
 
     @Override
     public Make getMake() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return make;
     }
 
     @Override
     public void setMake(Make make) {
-         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         this.make=make;
     }
 
     @Override
