@@ -7,6 +7,7 @@ package ooc.yoursolution;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import ooc.enums.Make;
 
 /**
  *
@@ -16,18 +17,26 @@ public class BookingSystem implements BookingSystemInterface {
  
     @Override
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException {
-        String rental = in.readLine();
-        String content= "";
+        String content = in.readLine();
+        String rental= content;
+        String [] data = null;
+        //read the line again so the fact that the name didn't have a : wont make the code crash
+        content = in.readLine();
         
        RentACarInterface rentACar = new RentACar();
         
-        while(rental != null){
-            System.out.println(rental);
+        while(content != null){
+            data = content.split(":");
+            System.out.println(data[0]);
+            System.out.println(data[1]);
+            System.out.println(data[2]);
+            //System.out.println(content);
            // content = in.readLine();
             //System.out.println(content);
-            rental = in.readLine();}
+            content = in.readLine();}
 //                
-//            Car cars = new Car(content);
+            Car car= new Car(data[0],Double.parseDouble(data[1]),Integer.parseInt(data[2]));
+            System.out.println(car);
 //            .addItem(cars);
 //            
 //            
@@ -35,6 +44,10 @@ public class BookingSystem implements BookingSystemInterface {
     
   return rentACar;
 }
+
+   
+
+    
     
     @Override
     public String toString() {

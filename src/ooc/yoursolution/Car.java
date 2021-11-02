@@ -15,11 +15,11 @@ import ooc.enums.Month;
  */
 public class Car implements CarInterface{
     
-    public Make make;
+    public String make;
     public double rate;
     public int id;
     
-    public Car(Make make,double rate, int id){
+    public Car(String make,double rate, int id){
         this.make=make;
         this.rate=rate;
         this.id=id;
@@ -34,12 +34,12 @@ public class Car implements CarInterface{
 
     @Override
     public Make getMake() {
-        return make;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void setMake(Make make) {
-        this.make=make;
+         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -75,6 +75,11 @@ public class Car implements CarInterface{
     @Override
     public boolean book(Month month, int day) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" + "make=" + make + ", rate=" + rate + ", id=" + id + '}';
     }
     
 }
