@@ -55,7 +55,7 @@ public class Driver {
         
 //        // Check if there is a BMW car available for 5 days from the 1st
 //        // of January
-//        System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5)); 
+        System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5)); 
 //        
 //        // Get the id of the car available
 //        System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
