@@ -58,16 +58,21 @@ public class Driver {
         System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5)); 
 //        
 //        // Get the id of the car available
-//        System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
+          System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
 //        
 //        // Try some bookings
-//        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-//        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-//        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-//        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-//        System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
-//        System.out.println(rentACar.bookCar(Month.MARCH, 10, Make.FORD, 12));
-//        
+        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
+       System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+       System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
+        //testing if i could rent a bmw after 5 days
+       // System.out.println(rentACar.bookCar(Month.JANUARY, 6, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+       System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
+        System.out.println(rentACar.bookCar(Month.MARCH, 10, Make.FORD, 12));
+        
     }
 
 }

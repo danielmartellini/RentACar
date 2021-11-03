@@ -104,8 +104,15 @@ public class Car implements CarInterface {
 
     @Override
     public boolean book(Month month, int day) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if (availability.get(month)[day-1]) {
+            availability.get(month)[day-1] = false;
+            return true;
+        }
+ 
+        return false;
     }
+
 
     @Override
     public String toString() {

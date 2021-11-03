@@ -59,14 +59,14 @@ public class RentACar implements RentACarInterface {
                 stop = 0;
                 for (int i = 0; i < lengthOfRent; i++) {
                     if (!car.isAvailable(month, rentDay++)) {
-                        stop=1;
+                        stop = 1;
                         break;
-                        
+
                     }
                 }
-                
-                if (stop==0){
-                return true;
+
+                if (stop == 0) {
+                    return true;
                 }
 
             }
@@ -74,19 +74,57 @@ public class RentACar implements RentACarInterface {
         return false;
     }
 
-@Override
-public int getCarAvailable(Month month, int day, Make make, int lengthOfRent) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public int getCarAvailable(Month month, int day, Make make, int lengthOfRent) {
+        int rentDay;
+        int stop;
+
+        for (CarInterface car : cars) {
+            if (car.getMake().equals(make)) {
+                rentDay = day;
+                stop = 0;
+                for (int i = 0; i < lengthOfRent; i++) {
+                    if (!car.isAvailable(month, rentDay++)) {
+                        stop = 1;
+                        break;
+
+                    }
+                }
+
+                if (stop == 0) {
+                    return car.getId();
+                }
+
+            }
+        }
+        //means that no car is available
+        return 0;
     }
 
     @Override
-public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {
+        if (!checkAvailability(month, day, make, lengthOfRent)) {
+            return false;
+        }
+ 
+        int carId = getCarAvailable(month, day, make, lengthOfRent);
+ 
+        for (CarInterface car : cars) {
+            if (car.getId() == carId && car.getMake() == make) {
+                int currentDay = day;
+                for (int i=0; i<lengthOfRent; i++) {
+                    car.book(month, currentDay++);
+                }
+            }
+        }
+ 
+        return true;
+    
     }
 
     @Override
-public int getNumberOfCars() {
+    public int getNumberOfCars() {
         return cars.size();
     }
-    
+
 }
