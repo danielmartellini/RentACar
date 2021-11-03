@@ -47,6 +47,9 @@ public class Car implements CarInterface {
             for (int i = 0; i < nDays; i++) {
                 // System.out.println(month.toString());
                 //System.out.println(i);
+                
+                //im already setting all the days as available here
+                
                 dayStatus[i] = true;
                 //System.out.println(dayStatus[i].toString());
                 availability.put(month, dayStatus);
