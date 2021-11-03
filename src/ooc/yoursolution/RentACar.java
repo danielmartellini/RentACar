@@ -78,7 +78,7 @@ public class RentACar implements RentACarInterface {
     public int getCarAvailable(Month month, int day, Make make, int lengthOfRent) {
         int rentDay;
         int stop;
-
+        // same as above but returning car`s id instead of boolean
         for (CarInterface car : cars) {
             if (car.getMake().equals(make)) {
                 rentDay = day;

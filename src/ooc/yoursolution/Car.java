@@ -25,6 +25,7 @@ public class Car implements CarInterface {
         this.make = make;
         this.rate = rate;
         this.id = id;
+        //this bit of the code is gonna run for every new car(46 times) creating a calendar for each car
         createAvailability();
        
 
